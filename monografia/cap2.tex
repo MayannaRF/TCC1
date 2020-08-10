@@ -1,86 +1,43 @@
-\chapter{Métodos de Kernel}
+\chapter{Fundamentação teórica}
 \label{CAP2}
 
 
-Este capítulo tem como objetivo 
+Neste capítulo são apresentadas algumas formas de construir um perfil de consumo energético de algoritmos implementados em sistemas embarcados com exemplos de casos de usos e algumas técnicas de calcular o consumo de energia de algoritmos. Por fim, é apresentada uma técnica de emulação de captura de energia detalhando suas especificidades.
 
 
-\section{Kernel em análise de padrões}\label{Sub:equa}
+\section{Sistemas embarcados}
+A enorme de evolução dos sistemas embarcados fez com que a sociedade se tornar, de certa forma, dependente deles, já que eles são essenciais para diversos setores, desde o automotivo até a medicina chegando até mesmo no vestuário. Esse progresso  se deve também ao crescimento da Internet das Coisas (IoT) 	que ainda deve crescer muito nos próximos anos como mostra graficamente a Figura 1 da IHS (2016).  
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale=.65]{figures/grafico.jpg}
+\caption{ Figura 1 - The IoT market will be massive. Fonte IHS (2016) } \label{Fig:1}
+\end{figure}
 
-Em análise de padrões, temos como objetivo detectar automaticamente padrões em um conjunto de dados de um determinado problema. Por padrões, podemos entender qualquer relação ou regularidades inerentes à alguma estrutura em uma fonte de dados. Essa análise geralmente é feita a partir dos valores de entrada e suas respectivas saídas(no caso da aprendizagem supervisionada) fornecidas no problema. Essas informações podem formar padrões em que se torna possível verificar o valor de uma saída dada uma nova entrada fornecida pelo usuário. 
+Os avanços da microeletrônica proporcionaram o surgimento de diversos microprocessadores, microcontroladores, processador de sinais digitais (DSP) e FPGA baseado em VLSI. Essa plataformas tem um papel primordial para o  IoT, já que é com elas  que acontece a automação de diversos sistemas. Cada um desses  microeletrônicos tem suas peculiaridades porém todos eles têm algo,muito nítido, em comum eles depende de energia para seu funcionando. Saber quanto é seu consumo energético se torna importante para seu total aproveitamento, uma parte desse consumo vem do algoritmo que está implementado no sistema. Para saber o consumo energético de determinados algoritmos existem alguns métodos que serão abordados a seguir.
 
-Diversos problemas podem ser resolvidos utilizando esta abordagem, categorização de textos, análise de sequências de DNA, reconhecimento de escrita, por exemplo.
+\subsection{Modelos Matematicos}
+Construir um modelo matemático que possa determinar o desempenho energético um sistema sem que ele esteja montado fisicamente seria muito interessante, já que assim simplificaria e muito o processo de produção. Um modelo com essas características já foi construído para redes de sensores sem fio. O modelo proposto aborda uma parte importante do processo operacional das redes de sensores visuais sem fio, que é o processamento interno nos nós sensores (CERQUEIRA; COSTA, 2019).
 
-A abordagem de análise de padrões utilizando métodos de kernel se baseia em adaptar os dados de entrada em um espaço característico adequado e nos algoritmos usados para descobrir os padrões do problema. Levando em conta isso, podemos pensar que qualquer solução com métodos de kernel é composta por estas duas partes: uma em que é feito o mapeamento nesse espaço característico e a outra em que é executado o algoritmo de aprendizagem para detectar os padrões neste espaço. A ideia por trás desta abordagem é poder mapear os dados em um espaço em que possamos 
+\subsection{Simuladores}
+Existem alguns simuladores de consumo energético um desse é o Sim-Panalyzer.  O SimpleScalar é um simulador de arquitetura computacional que modela um computador virtual com CPU, cache e hierarquia de memória e com base nesse modelo consegue simular programas reais executando sobre a plataforma especificada (LIMA; et al., 2012).
 
-Uma das principais caracerísticas desses métodos é o atalho computacional que pode ser utilizado, tal atalho é conhecido como função de kernel.
-
-
-O Kernel  é uma função de mapeamento de dados em dimensões superiores com a motivação de torná-los mais fáceis de separar ou estruturá-los de maneira mais adequada. Essas funções podem ser utilizadas nas tarefas de reconhecimento de padrões. 
-
-\begin{equation}\label{Eq:multiplicacao}
-%
-Z = X \cdot Y,
-%
-\end{equation}
-%
-em que $Z$, $X$ e $Y$ são variáveis complexas. A referenciação à Equação (\ref{Eq:multiplicacao}) é feita por meio do comando ``ref''. O mesmo vale para outros tipos de elementos.
-
-\subsection{Exemplo de uma equação mais complexa}
-
-  Equações mais complexas podem ser mais facilmente escritas com uso do programa TexAide. Como, por exemplo,
-
-    \begin{equation}\label{Eq:sqrt_gamma_X}
-    f_{\Gamma ^{{1 \mathord{\left/
-    {\vphantom {1 2}} \right.
-    \kern-\nulldelimiterspace} 2}} } (x;\alpha ,\lambda ) = \frac{{2\lambda ^\alpha  }}{{\Gamma (\alpha )}}x^{2\alpha  - 1} \exp \left( { - \lambda x^2 } \right).
-    \end{equation}
-    \[
-    \alpha ,\lambda > 0.
-    \]
-    %
-    em que $\Gamma(\cdot)$ é a função Gama. O programa TexAide é semelhante ao \textit{MathType} do Office, porém ao copiar e colar a equação em um arquivo tex, é gerado o código em LaTex referente a esta equação.
-
-\section{Tabelas}
-
-Tabelas são essenciais na apresentação de dados. A Tabela \ref{Tb:X_models} mostra um exemplo do uso deste tipo de elemento. Vale ressaltar que não é aconselhável o uso de linhas verticais em trabalhos acadêmicos e de pesquisa.
-
-\begin{table}[h]
- \caption{Modelos estatísticos e suas relações.}%
- \label{Tb:X_models}
-  \centering
-\begin{tabular}{c c c c c}
- \hline
- &&&&\\
-                                             &$\alpha ,\lambda  > 0$    &                               &$\alpha ,\lambda \rightarrow\infty$  &Homogêneo \\
-                                             &$\gamma  \to 0$           & Heterogêneo                   &$\alpha / \lambda \rightarrow \beta$ & \\
-                                             &$\mathop  \to \limits^D $ & $\sqrt\Gamma(\alpha,\lambda)$ &$\mathop  \to \limits^P $            &$\sqrt\beta$        \\
-$\mathcal{N}^{-1/2}(x;\alpha,\gamma,\lambda)$& & & &\\
-                                             &$\mathop  \to \limits^D $ & $\Gamma^{-1/2}(\alpha,\gamma)$&$\mathop  \to \limits^P $   &$\sqrt{\zeta^{-1}}$ \\
-                                             &$\lambda \to 0$           &  Extremamente                 &$-\alpha / \gamma \rightarrow \zeta^{-1}$ & \\
-                                             &$-\alpha ,\gamma   > 0$   &  Heterogêneo                  &$-\alpha ,\gamma \rightarrow\infty$ &Homogêneo \\
- &&&& \\
- \hline
- &&&&\\
-                                             &$\alpha ,\lambda  > 0$    &                               &$\alpha ,\lambda \rightarrow\infty$  &Homogêneo \\
-                                             &$\gamma  \to 0$           & Heterogêneo                   &$\alpha / \lambda \rightarrow \beta$ & \\
-                                             &$\mathop  \to \limits^D $ &$\mathcal{K}_A(\alpha,\lambda,n)$&$\mathop  \to \limits^P $&$\sqrt\Gamma(n,n/\beta)$        \\
-$\mathcal{G}_A(z;\alpha,\gamma,\lambda,n)$   & & & &\\
-                                             &$\mathop  \to \limits^D $ & $\mathcal{G}_A^0(\alpha,\gamma,n)$&$\mathop  \to \limits^P $&$\sqrt\Gamma(n,n\zeta)$  \\
-                                             &$\lambda \to 0$           &  Extremamente                 &$-\alpha / \gamma \rightarrow \zeta$ & \\
-                                             &$-\alpha ,\gamma   > 0$   &  Heterogêneo                  &$-\alpha ,\gamma \rightarrow\infty$ &Homogêneo \\
-&&&&   \\
- \hline
-
-\end{tabular}
-\end{table}
-
-
-A Figura \ref{Fig:1} mostra o exemplo do uso do comando ``subfigure''. Apesar de aceitar diferentes tipos de imagens. É preferível que as imagens estejam no formato .eps. Isso garante que a imagem impressa seja exatamente aquela visualizada, como acontece com arquivos pdf.
+\subsection{Osciloscopio }
+Dentre de todos os métodos relatados acima o osciloscópio é o mais tradicional quando se trata de medição de consumo de energia. Para a medição do consumo de energia foi usado o osciloscópio para medir a corrente consumida pelo processador ao executar o algoritmo desejado. Para medir a corrente, foi inserido um resistor de 0.333 Ohm conectado em série com o cabo de alimentação ATX12V da placa mãe e medida a diferença de voltagem da entrada e saída do resistor de shunt que foi inserido em série no circuito da placa principal,conforme se observa na Figura 2 ( NETO; MORENO; MATOS, 2011) .
 
 \begin{figure}[!ht]
 \centering
-\subfloat[]{\includegraphics[scale=.65]{figures/fig1.eps}}\\
-\subfloat[]{\includegraphics[scale=.65]{figures/fig2.eps}}
-\caption{ Curvas de funções de probabilidade: (a) exemplo 1, (b) exemplo 2.} \label{Fig:1}
+\includegraphics[scale=.65]{figures/ociloscopio.png}
+\caption{ Figura 2 - Esquema utilizado para as medições com o Osciloscópio. Retirado de  ( Neto; Moreno; Matos, 2011). } \label{Fig:1}
 \end{figure}
+
+
+\subsection{Ripeto}
+ Ripeto, uma plataforma de avaliação para EHES que pode imitar o comportamento do transdutor de captação de energia e registrar em rastreamentos de energia de memória e dados do analisador lógico para assegurar adequadamente o desempenho de um EHES (ALCANTARA; DE LIMA; FURTADO, 2019). O Ripeto é baseado em um FPGA Sparten6, da Xilinx, com 32 Mb de memória de DRAM acoplada.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale=.65]{figures/ripeto.png}
+\caption{Figura 3 - Arquitetura da Plataforma. Retirado de (ALCANTARA; DE LIMA; FURTADO, 2019) } \label{Fig:1}
+\end{figure}
+
+O elemento central, o FPGA é onde os  componentes lógicos são implementados. A intenção com essa plataforma é capturar os  perfis de fornecimento de energia de fontes renováveis e reproduzi los de forma consistente.
