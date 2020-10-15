@@ -1,17 +1,17 @@
 \chapter{Introdução}\label{CAP:introducao}
 %\thispagestyle{empty}
 
-A tecnologia está cada vez mais presente na vida da sociedade atual. As evoluções dessas tecnologias nas últimas décadas foram enormes. Hoje, elas estão presentes em diversos âmbitos da sociedade, como na agricultura, no comércio, nos equipamentos médicos, no monitoramento de rodovias, nas casas e até no corpo humano. Nesse cenário, os sistemas embarcados tornam-se cada vez mais presentes no cotidiano.
+Os sistemas embarcados estão a algum tempo atraindo os olhares mais curiosos de todo os  setores devido às suas características, tais quais: o preço baixo, a portabilidade e a capacidade de processamento, que só vem aumentando com o passar dos anos. Estes equipamentos se tornarão ubíquos na sociedade, em aplicações como o monitoramento de fundações prediais, da qualidade do solo agrícola, sensoriamento de rodovias, controle de estacionamentos urbanos e health care, com sensores integrados ao corpo humano (ALC NTARA, 2019). 
 
-Os sistemas embarcados têm muitas características que os beneficiam, tais quais: o preço acessível, a portabilidade e a capacidade de processamento, que só vem aumentando com o passar dos anos, além do baixo consumo de energia. 
-            
-Muitos desses equipamentos irão passar longos períodos sem nem uma intervenção humana. Sendo assim, apesar de seu pequeno consumo de energia, é muito importante ter uma noção exata de quanto ele será, para que, dessa forma, seja possível aumentar a autonomia do sistema e, consequentemente, sua vida útil. O consumo de energia desses dispositivos pode variar muito em função das operações atreladas a aplicação, dos modos de operação e dos periféricos utilizados. O que também pode contribuir para o gasto energético são os softwares utilizados no sistema.	
+Uma área onde esses microdispositivos estão muito presentes é a Internet das coisas (IoT). O IoT não é apenas conectar equipamentos elétricos como celulares, ele é a gradual automatização de setores inteiros da economia e da vida social com base na comunicação  máquina-máquina e para que isso ocorra é preciso um ambiente favorável (MAGRANI, 2018, p.15-16). Esse ambiente favorável depende de diversos fatores o mais óbvio deles está claro no nome Internet das coisas,  porém existe um fator que é ainda mais primordial que a própria internet a eletricidade, afinal de contas sem eletricidade os aparelhos eletrônicos não funcionam. 
+
+O consumo global de energia preocupa não só os ambientalistas, mas também toda a sociedade, e dispositivos de computação também estão sendo observados deste ponto de vista. Essa preocupação, aliada à autonomia das baterias, fez com que os projetistas passassem a desenvolver produtos buscando um menor consumo energético (COSTA, ORDENEZ, 2007). Alguns dispositivo poderão passa longos períodos apenas com interações com outras máquinas e suas fontes de energia serão  baterias, que por sua vez são limitadas, sendo assim fica claro o porquê da importância de se ter um conhecimento claro de todo o consumo energético deles. Para estes equipamentos não somente a capacidade do processamento deve ser ótima, mas também a demanda de energia elétrica dos algoritmos que executam nesses sistemas (DOS ANJOS LIMA, et al.). Ter um perfil de consumo energético de um algoritmo é de suma importância para se projetar um sistema eficiente na questão energética. Diante de tudo que já foi exposto acima fica clara a importância de se construir um perfil de consumo energético de algoritmo em um plataforma embarcada.
+
       
-\section{Motivaçâo}
-Diante da proeminente proliferação dos sistemas embarcados na sociedade e de todos os desafios existentes para torná-los mais eficientes quanto ao consumo energético, torna-se necessário ter conhecimento do perfil energético de determinados algoritmos que nos dispositivos serão utilizados. Com a construção dos perfis energéticos, seria mais fácil comparar e decidir qual algoritmo utilizar em determinados dispositivos e situações e, por consequência, o sistema desenvolvido seria mais eficiente.
+\section{Motivação}Diante da proeminente proliferação dos sistemas embarcados na sociedade e de todos os desafios existentes para torná-los mais eficientes quanto ao consumo energético, torna-se necessário ter conhecimento do perfil energético de determinados algoritmos que nos dispositivos serão utilizados. Com a construção dos perfis energéticos, seria mais fácil comparar e decidir qual algoritmo utilizar em determinados dispositivos e situações e, por consequência, o sistema desenvolvido seria mais eficiente.
 
 \section{Objetivo Geral}
-Traçar, de forma consistente, um perfil de consumo de energia de alguns algoritmos em um sistema embarcado em diferentes situações, permitindo, assim, uma avaliação apurada para uso em plataformas de simulação.
+Este trabalho tem como objetivo traçar, de forma consistente, um perfil de consumo de energia de algoritmos de uma benchmark em um sistema embarcado em diferentes situações, permitindo, assim, uma avaliação apurada para uso em plataformas de simulação.
 
 \subsection{Objetivos Especificos}
 Os objetivos específicos deste trabalho são os seguintes:
@@ -21,13 +21,17 @@ Os objetivos específicos deste trabalho são os seguintes:
     \item 	Empregar os perfis de consumo de energia gerados em diferentes condições, para uso como fonte de dados para simulações;
      
      \item 	Comparar os perfis de consumo de um mesmo algoritmo em diferentes condições.
+     
+     \item Comporar o consumo medido usando várias metodologias de avalição
+     
+     \item Destacar a medida experimental, via osciloscópio
 
 \end{itemize}
 
 
 
-\section{Organizacao da tese}
+\section{Organização do TCC}
 
-Esta dissertação encontra-se estruturada da seguinte forma: este primeiro capítulo
+Esta monografia encontra-se estruturada da seguinte forma: este primeiro capítulo
 trata da contextualização do tema, aponta o objetivo geral e os específicos do trabalho;
 no segundo capítulo, será apresentada a fundamentação teórica necessária ao desenvolvimento do projeto, sendo descritos os conceitos relacionados a consumo energetico; a descrição da solução proposta será detalhada no terceiro capítulo;
